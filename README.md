@@ -18,8 +18,6 @@ COMP3123 - Assignment 2
   - [2. Extract the Project Files](#2-extract-the-project-files)
   - [3. Set Up Environment Variables](#3-set-up-environment-variables)
   - [4. Build and Start Services with Docker Compose](#4-build-and-start-services-with-docker-compose)
-- [Usage](#usage)
-- [Troubleshooting](#troubleshooting)
 
 ---
 
