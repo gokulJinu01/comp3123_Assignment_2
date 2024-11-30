@@ -1,5 +1,3 @@
-# frontend/Dockerfile
-
 # Stage 1: Build the React app
 FROM node:18 AS build
 
@@ -12,6 +10,9 @@ RUN npm install
 
 # Copy the rest of the application code
 COPY . .
+
+# Copy the .env file
+COPY .env .env
 
 # Build the React app
 RUN npm run build
