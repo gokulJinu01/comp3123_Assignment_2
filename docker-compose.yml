@@ -16,7 +16,7 @@ services:
     healthcheck:
       test: >
         echo 'db.runCommand("ping").ok' | 
-        mongosh --username rootuser --password rootpass --authenticationDatabase admin --quiet --host localhost --port 27017 test
+        mongosh --username rootuser --password rootpass --authenticationDatabase admin --quiet --host mongodb --port 27017 test
       interval: 10s
       timeout: 5s
       retries: 5
@@ -34,6 +34,16 @@ services:
     depends_on:
       mongodb:
         condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: always
+    ports:
+      - "3000:80" # Host port 3000 → Container port 80 (Nginx)
+    depends_on:
+      backend:
+        condition: service_started
 
 volumes:
   mongo-data:

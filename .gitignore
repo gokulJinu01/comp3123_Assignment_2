@@ -10,5 +10,13 @@ backend/*.log
 .DS_Store
 Thumbs.db
 
+# Node modules
+frontend/node_modules/
+frontend/package-lock.json
+frontend/.env
+
+# Logs
+frontend/*.log
+
 # Docker files
 docker-compose.override.yml
